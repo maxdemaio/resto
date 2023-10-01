@@ -3,44 +3,147 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
-  .writing-lr {
-    writing-mode: vertical-lr;
-  }
-
   @font-face {
     font-family: "Mantra";
     src: url("./mantra-regular-webfont.woff2") format("woff2");
+  }
+  .writing-lr {
+    writing-mode: vertical-lr;
   }
 
   .font-mantra {
     font-family: "Mantra", sans-serif;
     font-style: oblique;
   }
+
+  .strike {
+    position: relative;
+  }
+
+  .strike::before {
+    transition: all 500ms linear;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    content: " ";
+    position: absolute;
+    background: black;
+  }
+
+  .strike:hover::before {
+    transform: scaleX(1);
+  }
+
+  .strike-vert {
+    position: relative;
+  }
+
+  .strike-vert::before {
+    transition: all 500ms linear;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    width: 1px;
+    left: 50%;
+    top: 0;
+    content: " ";
+    position: absolute;
+    background: #AE4E1E;
+  }
+
+  .strike-vert:hover::before {
+    transform: scaleY(1);
+  }
+
+  .fade-in {
+    opacity: 1;
+    animation: fade-in-ani 800ms ease-in;
+}
+
+
+@keyframes fade-in-ani {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes slide-from-left-ani {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-right-ani {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.slide-from-left {
+  animation: slide-from-left-ani 800ms ease-in-out forwards;
+  opacity: 0;
+  transform: translateX(-65%);
+  animation-delay: 400ms;
+}
+
+.slide-from-right {
+  animation: slide-from-right-ani 800ms ease-in-out forwards;
+  opacity: 0;
+  transform: translateX(65%);
+}
 </style>
 
 <Layout title="Resto">
-  <main>
-    <nav class="hidden h-screen fixed md:flex flex-col items-center gap-20 p-4">
+  <main class="">
+    <nav
+      class="fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
+    >
       <div class="flex-0 text-lg font-mantra">RESTO</div>
-      <div class="flex flex-1 flex-row gap-4 writing-lr">
-        <div>ABOUT</div>
-        <div>MENUS</div>
-        <div>EVENTS</div>
-        <div>CONTACT</div>
+      <div class="font-medium flex flex-1 flex-row gap-4 writing-lr text-sm">
+        <a href="#" class="p-1 strike-vert">ABOUT</a>
+        <a href="#" class="p-1 strike-vert">MENUS</a>
+        <a href="#" class="p-1 strike-vert">EVENTS</a>
+        <a href="#" class="p-1 strike-vert">CONTACT</a>
       </div>
     </nav>
-		<nav class="bg-[#DED4C8] md:hidden flex justify-between p-4">
-			<div>hamburger</div>
+    <nav class="bg-[#DED4C8] md:hidden flex justify-between p-4">
+      <div>hamburger</div>
       <div class="text-lg font-mantra">RESTO</div>
-			<div>lang</div>
-		</nav>
-    <section class="flex flex-col gap-6 h-screen bg-[#DED4C8] text-[#AE4E1E] pl-4 md:px-24 pt-4">
+      <div>lang</div>
+    </nav>
+    <nav
+      class="font-medium text-sm bg-[#61614F] items-center justify-end text-white h-[100%] right-0 fixed hidden md:flex flex-1 flex-row gap-4 writing-lr p-6"
+    >
+      <div class="fade-in p-1">INSTAGRAM</div>
+      <div class="fade-in p-1">FACEBOOK</div>
+      <div class="fade-in p-1">LANG</div>
+    </nav>
+    <section
+      class="flex flex-col items-start gap-6 bg-[#DED4C8] text-[#AE4E1E] pl-4 md:px-[10rem] py-6"
+    >
       <div class="flex flex-col hover:text-gray-600">
-        <div class="font-mantra text-7xl md:text-8xl">Brunch</div>
-				<span class="hidden md:block text-xs">from 10am to 4pm</span>
+        <div class="font-mantra text-7xl md:text-8xl slide-from-left">Brunch</div>
+        <span class="hidden md:block text-xs">from 10am to 4pm</span>
       </div>
       <div class="flex flex-row gap-1 hover:text-gray-600">
-        <div class="font-mantra text-7xl md:text-8xl md:pl-16">Coffee</div>
+        <div class="md:w-16"></div>
+        <div class="font-mantra text-7xl md:text-8xl slide-from-right">Coffee</div>
         <span class="hidden md:block text-xs">for here or to go</span>
       </div>
       <div class="relative hover:text-gray-600">
@@ -48,14 +151,16 @@ import Layout from "../layouts/Layout.astro";
           class="hidden md:block absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem]"
           >business or boozy</span
         >
-        <div class="font-mantra text-7xl md:text-8xl">Lunch</div>
+        <div class="font-mantra text-7xl md:text-8xl slide-from-right">Lunch</div>
       </div>
       <div class="flex flex-row items-center gap-1 hover:text-gray-600">
-				<span class="hidden md:block writing-lr rotate-180 text-xs">many by the glass</span>
-        <div class="font-mantra text-7xl md:text-8xl">Natural wines</div>
+        <span class="hidden md:block writing-lr rotate-180 text-xs"
+          >many by the glass</span
+        >
+        <div class="font-mantra text-7xl md:text-8xl slide-from-left">Natural wines</div>
       </div>
       <div class="flex flex-row gap-1 hover:text-gray-600">
-				<div class="font-mantra text-7xl md:text-8xl">Snacks</div>
+        <div class="font-mantra text-7xl md:text-8xl slide-from-right">Snacks</div>
         <span class="hidden md:block text-xs">all day long</span>
       </div>
     </section>
