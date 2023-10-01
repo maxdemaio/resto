@@ -65,11 +65,11 @@ import Layout from "../layouts/Layout.astro";
       opacity: 0;
     }
     100% {
-      opacity: 0.5;
+      opacity: 0.6;
     }
   }
   .img-fade-in {
-    animation: img-fade-in-ani 1.6s ease-in;
+    animation: img-fade-in-ani 1.6s ease-in forwards;
   }
 
   @keyframes fade-in-ani {
@@ -128,26 +128,26 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .slide-from-left {
-    animation: slide-from-left-ani 1.1s ease-out forwards;
+    animation: slide-from-left-ani 1s ease-out forwards;
     opacity: 0;
     transform: translateX(-60%);
   }
 
   .slide-from-right {
-    animation: slide-from-right-ani 1.1s ease-out forwards;
+    animation: slide-from-right-ani 1s ease-out forwards;
     opacity: 0;
     transform: translateX(60%);
   }
 
   .slide-from-right-delay {
-    animation: slide-from-right-ani 1.1s ease-out forwards;
+    animation: slide-from-right-ani 1s ease-out forwards;
     opacity: 0;
     transform: translateX(60%);
     animation-delay: 400ms;
   }
 
   .slide-from-top {
-    animation: slide-from-top-ani 1.1s ease-in-out forwards;
+    animation: slide-from-top-ani 1s ease-in-out forwards;
     opacity: 0;
     transform: translateY(-60%);
     animation-delay: 400ms;
@@ -157,20 +157,22 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Resto">
   <main class="">
     <nav
-      class="fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
-    >
+      class="z-10 fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
+    > 
       <div class="flex-0 text-lg font-mantra">RESTO</div>
       <div class="font-medium flex flex-1 flex-row gap-4 writing-lr text-sm">
-        <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">ABOUT</a>
+        <a href="#about-resto" class="p-1 strike-vert before:bg-[#AE4E1E]"
+          >ABOUT</a
+        >
         <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">MENUS</a>
         <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">EVENTS</a>
         <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">CONTACT</a>
       </div>
     </nav>
     <nav class="bg-[#DED4C8] md:hidden flex justify-between p-4">
-      <div>hamburger</div>
+      <div>NAVMENU</div>
       <div class="text-lg font-mantra">RESTO</div>
-      <div>lang</div>
+      <div>LANG</div>
     </nav>
     <nav
       class="font-medium text-sm bg-[#61614F] items-center justify-end text-white h-[100%] right-0 fixed hidden md:flex flex-1 flex-row gap-4 writing-lr p-6"
@@ -180,19 +182,45 @@ import Layout from "../layouts/Layout.astro";
       <a href="#" class="fade-in p-1 strike-vert before:bg-white">LANG</a>
     </nav>
 
-    <section class="bg-[#DED4C8] text-[#AE4E1E] pl-4 md:px-[10rem] py-6">
+    <section class=" bg-[#DED4C8] text-[#AE4E1E] px-4 md:px-[10rem] pt-8 pb-24">
       <img
-        class="img-fade-in absolute top-[9%] right-[13%] opacity-50 rounded-sm"
-        width="400px"
+        class="z-0 img-fade-in absolute top-[0%] right-[13%] rounded-sm"
+        width="400"
         src="./amy-vosters--Yxl9vDlnLM-unsplash.jpg"
         alt="wine"
       />
-      <div class="flex flex-col items-center md:items-start gap-6">
-        <div class="flex flex-col hover:text-gray-600 slide-from-left">
+      <img
+        class="z-0 img-fade-in absolute top-[65%] right-[13%] rounded-sm"
+        width="250"
+        src="./pancake-0.jpeg"
+        alt="pancakes 0"
+      />
+      <img
+      class="z-0 img-fade-in absolute top-[85%] right-[13%] rounded-sm"
+      width="250"
+      src="./pancake-1.jpeg"
+      alt="pancakes 1"
+    />
+      <img
+        class="z-0 img-fade-in absolute top-[70%] left-[30%] rounded-sm"
+        width="400"
+        src="./avo-0.jpeg"
+        alt="avocado toast"
+      />
+
+      <img
+      class="z-0 img-fade-in absolute top-[60%] left-[0%] rounded-sm"
+      width="190"
+      src="./hall-0.jpeg"
+      alt="image 0 of inside of restauarant"
+    />
+
+      <div class="z-10 flex flex-col text-center md:text-left gap-6 ">
+        <div class="flex flex-col hover:text-gray-600 slide-from-left w-full">
           <div class="font-mantra text-7xl md:text-8xl">Brunch</div>
           <span class="hidden md:block text-xs">from 10am to 4pm</span>
         </div>
-        <div class="flex flex-row gap-2 hover:text-gray-600">
+        <div class="z-10 flex flex-row gap-2 hover:text-gray-600 w-full">
           <div class="md:w-16"></div>
           <div class="font-mantra text-7xl md:text-8xl slide-from-right">
             Coffee
@@ -202,7 +230,7 @@ import Layout from "../layouts/Layout.astro";
             >for here or to go</span
           >
         </div>
-        <div class="relative hover:text-gray-600">
+        <div class="z-10 relative hover:text-gray-600 w-full">
           <span
             class="hidden md:block absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem] slide-from-top"
             >business or boozy</span
@@ -212,14 +240,14 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
         <div
-          class="flex flex-row items-center gap-2 hover:text-gray-600 slide-from-left"
+          class="z-10 flex flex-row items-center gap-2 hover:text-gray-600 slide-from-left mx-auto md:mx-0 w-full"
         >
           <span class="hidden md:block writing-lr rotate-180 text-xs"
             >many by the glass</span
           >
           <div class="font-mantra text-7xl md:text-8xl">Natural wines</div>
         </div>
-        <div class="flex flex-row gap-2 hover:text-gray-600">
+        <div class="z-10 flex flex-row gap-2 hover:text-gray-600 w-full">
           <div class="font-mantra text-7xl md:text-8xl slide-from-right">
             Snacks
           </div>
@@ -229,8 +257,38 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
-    <section class="bg-[#AE4E1E] text-white">
-      <div>example 2</div>
+    <section id="about-resto" class="bg-[#AE4E1E] text-white px-4 md:px-[10rem] py-8">
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">
+        Who is Resto?
+      </h2>
+      <div class="text-lg mb-6">
+        Located in the heart of Old Montreal, Resto is the perfect place to
+        enjoy a delicious breakfast or lunch, to take away coffee & pastries or
+        delight in a long boozy brunch. The cellar offers an ambitious natural
+        wine selection while complimenting a refined yet comforting menu.
+      </div>
+
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">About the Owner</h2>
+      <div class="text-lg mb-6">
+        Resto Owner, a dedicated food enthusiast, followed a traditional path to
+        the professional kitchen. They studied culinary arts and gained experience
+        at renowned restaurants such as Le Petit Gourmet and Chez L'Artiste. In
+        2017, they fulfilled their dream of opening Resto, a cozy
+        restaurant in the heart of Old Montreal known for its exquisite dishes and
+        warm ambiance.
+      </div>
+
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">See our Menus</h2>
+    </section>
+    <section class="bg-[#895621] text-white px-4 md:px-[10rem] py-8">
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">Menus</h2>
+    </section>
+    <section class="bg-[#61614F] text-white px-4 md:px-[10rem] py-8">
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">Contact Us</h2>
+
+    </section>
+    <section class="bg-[#AE4E1E] px-4 md:px-[10rem] py-8 text-white">
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6">Footsies</h2>
     </section>
   </main>
 </Layout>
