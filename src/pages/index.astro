@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  .writing-lr {
+    writing-mode: vertical-lr;
+  }
+
+  @font-face {
+    font-family: "Mantra";
+    src: url("./mantra-regular-webfont.woff2") format("woff2");
+  }
+
+  .font-mantra {
+    font-family: "Mantra", sans-serif;
+    font-style: oblique;
+  }
+</style>
+
+<Layout title="Resto Homepage">
+  <main>
+    <nav class="h-screen fixed flex flex-col items-center gap-20 p-2">
+      <div class="flex-0 text-lg font-mantra">RESTO</div>
+      <div class="flex flex-1 flex-row gap-4 writing-lr">
+        <div>ABOUT</div>
+        <div>MENUS</div>
+        <div>EVENTS</div>
+        <div>CONTACT</div>
+      </div>
+    </nav>
+    <section class="flex flex-col gap-6 h-screen bg-[#DED4C8] text-[#AE4E1E] pl-24 pt-4">
+      <div class="flex flex-col hover:text-gray-600">
+        <div class="font-mantra text-8xl">Brunch</div>
+				<span class="text-xs">from 10am to 4pm</span>
+
+      </div>
+      <div class="flex flex-row gap-1 hover:text-gray-600">
+        <div class="font-mantra text-8xl pl-16">Coffee</div>
+        <span class="text-xs">for here or to go</span>
+      </div>
+      <div class="relative hover:text-gray-600">
+        <span
+          class="absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem]"
+          >business or boozy</span
+        >
+        <div class="font-mantra text-8xl">Lunch</div>
+      </div>
+      <div class="flex flex-row items-center gap-1 hover:text-gray-600">
+				<span class="writing-lr rotate-180 text-xs">many by the glass</span>
+        <div class="font-mantra text-8xl">Natural wines</div>
+      </div>
+      <div class="flex flex-row gap-1 hover:text-gray-600">
+				<div class="font-mantra text-8xl">Snacks</div>
+        <span class="text-xs">all day long</span>
+      </div>
+    </section>
+    <section class="bg-[#AE4E1E] text-white">
+      <div>example 2</div>
+    </section>
+  </main>
+</Layout>
