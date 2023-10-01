@@ -18,9 +18,9 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 
-<Layout title="Resto Homepage">
+<Layout title="Resto">
   <main>
-    <nav class="h-screen fixed flex flex-col items-center gap-20 p-2">
+    <nav class="bg-[#DED4C8] hidden h-screen fixed md:flex flex-col items-center gap-20 p-2">
       <div class="flex-0 text-lg font-mantra">RESTO</div>
       <div class="flex flex-1 flex-row gap-4 writing-lr">
         <div>ABOUT</div>
@@ -29,30 +29,34 @@ import Layout from "../layouts/Layout.astro";
         <div>CONTACT</div>
       </div>
     </nav>
-    <section class="flex flex-col gap-6 h-screen bg-[#DED4C8] text-[#AE4E1E] pl-24 pt-4">
+		<nav class="bg-[#DED4C8] md:hidden flex justify-between p-2">
+			<div>hamburger</div>
+      <div class="text-lg font-mantra">RESTO</div>
+			<div>lang</div>
+		</nav>
+    <section class="flex flex-col gap-6 h-screen bg-[#DED4C8] text-[#AE4E1E] pl-4 md:px-24 pt-4">
       <div class="flex flex-col hover:text-gray-600">
-        <div class="font-mantra text-8xl">Brunch</div>
-				<span class="text-xs">from 10am to 4pm</span>
-
+        <div class="font-mantra text-7xl md:text-8xl">Brunch</div>
+				<span class="hidden md:block text-xs">from 10am to 4pm</span>
       </div>
       <div class="flex flex-row gap-1 hover:text-gray-600">
-        <div class="font-mantra text-8xl pl-16">Coffee</div>
-        <span class="text-xs">for here or to go</span>
+        <div class="font-mantra text-7xl md:text-8xl md:pl-16">Coffee</div>
+        <span class="hidden md:block text-xs">for here or to go</span>
       </div>
       <div class="relative hover:text-gray-600">
         <span
-          class="absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem]"
+          class="hidden md:block absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem]"
           >business or boozy</span
         >
-        <div class="font-mantra text-8xl">Lunch</div>
+        <div class="font-mantra text-7xl md:text-8xl">Lunch</div>
       </div>
       <div class="flex flex-row items-center gap-1 hover:text-gray-600">
-				<span class="writing-lr rotate-180 text-xs">many by the glass</span>
-        <div class="font-mantra text-8xl">Natural wines</div>
+				<span class="hidden md:block writing-lr rotate-180 text-xs">many by the glass</span>
+        <div class="font-mantra text-7xl md:text-8xl">Natural wines</div>
       </div>
       <div class="flex flex-row gap-1 hover:text-gray-600">
-				<div class="font-mantra text-8xl">Snacks</div>
-        <span class="text-xs">all day long</span>
+				<div class="font-mantra text-7xl md:text-8xl">Snacks</div>
+        <span class="hidden md:block text-xs">all day long</span>
       </div>
     </section>
     <section class="bg-[#AE4E1E] text-white">
