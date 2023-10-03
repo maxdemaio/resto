@@ -1,0 +1,22 @@
+---
+import MenuItems from "./MenuItems.astro";
+const drinkMenu = [
+  {
+    itemName: "mimosa",
+    price: 12,
+    description: "fresh orange juice, sparkling wine",
+  },
+  {
+    itemName: "bloody caesar",
+    price: 12,
+    description: "vodka, worcestershire, walter caesar, salt rim",
+  },
+  {
+    itemName: "espresso martini",
+    price: 14,
+    description: "kahlua, vodka, espresso",
+  },
+];
+---
+
+<MenuItems menu={drinkMenu} />
