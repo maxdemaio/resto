@@ -53,7 +53,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .strike::before {
-    transition: all 500ms linear;
+    transition: all 600ms ease-out;
     width: 100%;
     transform: scaleX(0);
     transform-origin: 0%;
@@ -62,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
     left: 0;
     content: " ";
     position: absolute;
-    background: black;
+    background: white;
   }
 
   .strike:hover::before {
@@ -96,15 +96,14 @@ import Layout from "../layouts/Layout.astro";
     >
       <div class="flex-0 text-lg font-mantra">RESTO</div>
       <div class="font-medium flex flex-1 flex-row gap-4 writing-lr text-sm">
-        <a href="#about-resto" class="p-1 strike-vert before:bg-[#AE4E1E]"
+        <a href="#about-resto" class="px-2 strike-vert before:bg-[#AE4E1E]"
           >ABOUT</a
         >
-        <a href="#menus" class="p-1 strike-vert before:bg-[#AE4E1E]">MENUS</a>
-        <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">EVENTS</a>
-        <a href="#" class="p-1 strike-vert before:bg-[#AE4E1E]">CONTACT</a>
+        <a href="#menus" class="px-2 strike-vert before:bg-[#AE4E1E]">MENUS</a>
+        <a href="#contact" class="px-2 strike-vert before:bg-[#AE4E1E]">CONTACT</a>
       </div>
     </nav>
-    <nav class="bg-[#DED4C8] md:hidden flex justify-between p-4">
+    <nav class="sticky top-0 z-10 bg-[#DED4C8] text-[#AE4E1E] md:hidden flex justify-between p-4">
       <div>NAVMENU</div>
       <div class="text-lg font-mantra">RESTO</div>
       <div>LANG</div>
@@ -112,9 +111,9 @@ import Layout from "../layouts/Layout.astro";
     <nav
       class="font-medium text-sm bg-[#61614F] items-center justify-end text-white h-[100%] right-0 fixed hidden md:flex flex-1 flex-row gap-4 writing-lr p-6"
     >
-      <a href="#" class="fade-in p-1 strike-vert before:bg-white">INSTAGRAM</a>
-      <a href="#" class="fade-in p-1 strike-vert before:bg-white">FACEBOOK</a>
-      <a href="#" class="fade-in p-1 strike-vert before:bg-white">LANG</a>
+      <a href="#" class="fade-in px-2 strike-vert before:bg-white">INSTAGRAM</a>
+      <a href="#" class="fade-in px-2 strike-vert before:bg-white">FACEBOOK</a>
+      <a href="#" class="fade-in px-2 strike-vert before:bg-white">LANG</a>
     </nav>
     <Hero />
     <About />
