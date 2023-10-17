@@ -3,7 +3,7 @@ import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Footsies from "../components/Footsies.astro";
 import Hero from "../components/Hero.astro";
-import Menus from "../components/menu/Menus.astro";
+import Menus from "../components/menu/Menus.tsx";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -37,6 +37,10 @@ import Layout from "../layouts/Layout.astro";
 
   .fade-in {
     animation: fade-in-ani 3s ease forwards;
+  }
+
+  .fade-in-menu {
+    animation: fade-in-ani 1.5s ease forwards;
   }
 
   .font-mantra {
@@ -106,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </nav>
     <nav
-      class="sticky top-0 z-10 bg-[#DED4C8] text-[#AE4E1E] md:hidden flex justify-between p-4"
+      class="sticky top-0 z-30 bg-[#DED4C8] text-[#AE4E1E] md:hidden flex justify-between p-4"
     >
       <div>NAVMENU</div>
       <div class="text-lg font-mantra">RESTO</div>
@@ -121,7 +125,7 @@ import Layout from "../layouts/Layout.astro";
     </nav>
     <Hero />
     <About />
-    <Menus />
+    <Menus client:load />
     <Contact />
     <Footsies />
   </main>
