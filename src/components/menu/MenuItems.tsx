@@ -8,8 +8,8 @@ interface MenuProps {
 const MenuItems: React.FC<MenuProps> = ({ menu }) => {
   return (
     <>
-      {menu.map((item: MenuItem) => (
-        <div className='fade-in-menu'>
+      {menu.map((item: MenuItem, index) => (
+        <div key={index} className='fade-in-menu'>
           <div key={item.itemName} className="text-lg mb-2 flex justify-between">
             <div>{item.itemName.toUpperCase()}</div>
             <div aria-label="price">${item.price.toFixed(2)}</div>
