@@ -13,11 +13,11 @@ const Menus: React.FC = () => {
       <section id="menus" className="bg-[#895621] text-white px-3 md:px-[10rem] py-14">
         <h2 className="font-mantra text-5xl md:text-6xl mb-6">Menus</h2>
         <div
-          className="flex gap-4 items-center justify-between w-full border-b mb-16"
+          className="flex items-stretch justify-between w-full border-b mb-16"
         >
-          <button onClick={() => handleCategoryClick('Food')} className="grow bg-black py-4 font-mantra text-xl md:text-3xl basis-0">FOOD</button>
-          <button onClick={() => handleCategoryClick('Drinks')} className="grow bg-black py-4 font-mantra text-xl md:text-3xl basis-0">DAY DRINKING</button>
-          <button onClick={() => handleCategoryClick('More')} className="grow bg-black py-4 font-mantra text-xl md:text-3xl basis-0">COFFEE & MORE</button>
+          <button onClick={() => handleCategoryClick('Food')} className="grow bg-black p-4 font-mantra text-xl md:text-3xl basis-0">FOOD</button>
+          <button onClick={() => handleCategoryClick('Drinks')} className="grow bg-black p-4 font-mantra text-xl md:text-3xl basis-0">DAY DRINKING</button>
+          <button onClick={() => handleCategoryClick('More')} className="grow bg-black p-4 font-mantra text-xl md:text-3xl basis-0">COFFEE & MORE</button>
         </div>
         <div>
           {selectedCategory === 'Food' && <div className="fade-in-menu border-b text-lg mb-8">ALL DAY BRUNCH</div>}
