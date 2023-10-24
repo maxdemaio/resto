@@ -3,7 +3,7 @@ import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Footsies from "../components/Footsies.astro";
 import Hero from "../components/Hero.astro";
-import Menus from "../components/menu/Menus.tsx";
+import MenusDropdown from "../components/menu/MenusDropdown.tsx";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -135,7 +135,7 @@ import Layout from "../layouts/Layout.astro";
     </nav>
     <Hero />
     <About />
-    <Menus client:load />
+    <MenusDropdown client:load />
     <Contact />
     <Footsies />
   </main>
