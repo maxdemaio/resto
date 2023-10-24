@@ -93,8 +93,14 @@ import Layout from "../layouts/Layout.astro";
     transform: scaleY(1);
   }
 
+  #menus .item {
+    transition: all .3s;
+  }
   #menus .active {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+  #menus .hoverable:hover {
+    background-color: #AE4E1E;
   }
 </style>
 <Layout title="Resto">
