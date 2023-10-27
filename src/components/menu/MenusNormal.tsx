@@ -52,7 +52,7 @@ const Menus: React.FC = () => {
           </div>
         )}
         {selectedCategory === "FOOD" && <MenuItems menu={foodMenu} />}
-        {selectedCategory === "DRINKS" && <MenuItems menu={drinkMenu} />}
+        {selectedCategory === "DAY DRINKING" && <MenuItems menu={drinkMenu} />}
         {selectedCategory === "COFFEE & MORE" && <MenuItems menu={moreMenu} />}
       </div>
     </section>
