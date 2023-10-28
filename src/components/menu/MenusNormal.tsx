@@ -54,6 +54,11 @@ const Menus: React.FC = () => {
         {selectedCategory === "FOOD" && <MenuItems menu={foodMenu} />}
         {selectedCategory === "DAY DRINKING" && <MenuItems menu={drinkMenu} />}
         {selectedCategory === "COFFEE & MORE" && <MenuItems menu={moreMenu} />}
+        {selectedCategory === "FOOD" && (
+          <div className="fade-in-menu border-b text-lg pt-6 mb-8">
+            SIDES
+          </div>
+        )}
       </div>
     </section>
   );
