@@ -3,6 +3,7 @@ import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Footsies from "../components/Footsies.astro";
 import Hero from "../components/Hero.astro";
+import MobileNav from "../components/MobileNav.astro";
 import Menus from "../components/menu/Menus";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -122,27 +123,7 @@ import Layout from "../layouts/Layout.astro";
         >
       </div>
     </nav>
-    <nav
-      class="sticky top-0 z-30 bg-[#DED4C8] text-[#AE4E1E] md:hidden flex justify-between p-4"
-    >
-      <button>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 16 16"
-          ><path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"></path></svg
-        >
-      </button>
-      <div class="text-lg font-mantra">RESTO</div>
-      <div>LANG</div>
-    </nav>
+    <MobileNav />
     <nav
       class="z-10 font-medium text-sm bg-[#61614F] items-center justify-end text-white h-[100%] right-0 fixed hidden md:flex flex-1 flex-row gap-4 writing-lr p-6"
     >
