@@ -26,11 +26,26 @@ const Menus: React.FC = () => {
           onClick={toggleDropdown}
           className="w-full flex justify-between p-4 font-mantra text-xl md:text-3xl"
         >
-          <div></div>
-          <div>
-            {selectedCategory.toUpperCase()}{" "}
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className={isDropdownOpen ? "rotate-180 transform transition duration-300" : "transition transform duration-300"}><path d="m18 15-6-6-6 6"></path></svg>
+          <div className="spacer"></div>
+          <div>{selectedCategory.toUpperCase()} </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            strokeLinejoin="round"
+            className={
+              isDropdownOpen
+                ? "rotate-180 transform transition duration-300"
+                : "transition transform duration-300"
+            }
+          >
+            <path d="m18 15-6-6-6 6"></path>
+          </svg>
         </button>
         {/* use height manipulation based on the open state */}
         <div

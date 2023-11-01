@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import MenuItems from "./MenuItems";
-import { drinkMenu, foodMenu, moreMenu } from "./allMenus";
+import {
+  drinkMenu,
+  foodMenu,
+  moreMenu,
+  pastryMenu,
+  sidesMenu,
+} from "./allMenus";
 
 const Menus: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("FOOD");
@@ -55,8 +61,19 @@ const Menus: React.FC = () => {
         {selectedCategory === "DAY DRINKING" && <MenuItems menu={drinkMenu} />}
         {selectedCategory === "COFFEE & MORE" && <MenuItems menu={moreMenu} />}
         {selectedCategory === "FOOD" && (
-          <div className="fade-in-menu border-b text-lg pt-6 mb-8">
-            SIDES
+          <>
+            <div className="fade-in-menu border-b text-lg pt-6 mb-8">SIDES</div>
+            <MenuItems menu={sidesMenu} />
+            <div className="fade-in-menu border-b text-lg pt-6 mb-8">
+              PASTRIES
+            </div>
+            <MenuItems menu={pastryMenu} />
+          </>
+        )}
+        {selectedCategory === "DAY DRINKING" && (
+          <div className="pt-6 mb-8">
+            *Our natural wine offering is ever evolving and available upon
+            request at the restaurant.
           </div>
         )}
       </div>

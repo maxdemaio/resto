@@ -8,7 +8,7 @@ interface MenuProps {
 const MenuItems: React.FC<MenuProps> = ({ menu }) => {
   return (
     <>
-      {menu.map((item: MenuItem, index) => (
+      {menu?.map((item: MenuItem, index) => (
         <div key={index} className="fade-in-menu">
           <div
             key={item.itemName}
