@@ -110,7 +110,8 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Resto">
   <main>
     <nav
-      class="z-10 fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
+      id="desktop-nav"
+      class="z-10 transition duration-500 fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
     >
       <div class="flex-0 text-lg font-mantra">RESTO</div>
       <div class="font-medium flex flex-1 flex-row gap-4 writing-lr text-sm">
@@ -138,3 +139,29 @@ import Layout from "../layouts/Layout.astro";
     <Footsies />
   </main>
 </Layout>
+
+<script>
+  const elementToChange = document.getElementById("desktop-nav");
+  const targetElement = document.getElementById("about-resto");
+
+  if (elementToChange && targetElement) {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.45, // Change this value as needed
+    };
+
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          elementToChange.style.color = "white"; // Change the color of the element to change
+          elementToChange.classList.add("before:bg-white")
+        } else {
+          elementToChange.style.color = "#AE4E1E"; // Reset to the original color
+        }
+      });
+    }, options);
+
+    intersectionObserver.observe(targetElement);
+  }
+</script>
