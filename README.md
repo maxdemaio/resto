@@ -1,24 +1,16 @@
 # Resto
 
-It's a restaurant website!
+</3
 
-## 🚀 Project Structure
+todo:
 
-Inside of your Astro project, you'll see the following folders and files:
+- add extra menu items and stuff to the mobile menu
+- internationalization
+- images / paralax
+- spacing finalize
+- mobile sliding menu make nicer
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
