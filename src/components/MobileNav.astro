@@ -4,15 +4,15 @@
     animation-play-state: paused;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: 500ms;
+    animation-duration: 300ms;
     animation-name: slide-lr;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 40;
     inset: 0;
     color: white;
-    background-color: #AE4E1E;
+    background-color: #ae4e1e;
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -24,65 +24,100 @@
     0% {
       transform: translateX(-100%);
     }
-    
+
     100% {
       transform: translateX(0%);
     }
   }
 
-    @keyframes slide-rl {
-      0% {
-        transform: translateX(0%);
-      }
-      
-      100% {
-        transform: translateX(-100%);
-      }
+  @keyframes slide-rl {
+    0% {
+      transform: translateX(0%);
     }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 </style>
 <nav
   class="sticky top-0 z-30 bg-[#DED4C8] text-[#AE4E1E] md:hidden flex justify-between p-4"
 >
   <button id="menu-button">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      ><path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 8h22M5 16h22M5 24h22"></path></svg
+    >
   </button>
   <div class="text-lg font-mantra">RESTO</div>
   <div>LANG</div>
 </nav>
-<nav
-  id="mobile-nav-view"
->
+<nav id="mobile-nav-view">
   <div class="flex justify-between">
     <div></div>
     <button id="close-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 23L23 9m0 14L9 9"/></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        ><path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 23L23 9m0 14L9 9"></path></svg
+      >
     </button>
   </div>
   <div class="flex flex-col gap-6">
     <!--Note: after clicking, we should transition the mobile-nav-view away -->
-    <a href="#about-resto" class="text-3xl">ABOUT</a>
-    <a href="#menus" class="text-3xl">MENUS</a>
-    <a href="#contact" class="text-3xl">CONTACT</a>
-    <a href="#" class="text-3xl">INSTAGRAM</a>
-    <a href="#" class="text-3xl">FACEBOOK</a>
+    <a href="#about-resto" class="mobile-nav-view-button text-3xl">ABOUT</a>
+    <a href="#menus-dropdown" class="mobile-nav-view-button text-3xl">MENUS</a>
+    <a href="#contact" class="mobile-nav-view-button text-3xl">CONTACT</a>
+    <a href="#" class="mobile-nav-view-button text-3xl">INSTAGRAM</a>
+    <a href="#" class="mobile-nav-view-button text-3xl">FACEBOOK</a>
   </div>
 </nav>
 
 <script>
   const menuButton: HTMLElement | null = document.getElementById("menu-button");
-  const mobileNavView: HTMLElement | null = document.getElementById("mobile-nav-view");
-  const closeButton: HTMLElement | null = document.getElementById("close-button");
+  const mobileNavView: HTMLElement | null =
+    document.getElementById("mobile-nav-view");
+  const closeButton: HTMLElement | null =
+    document.getElementById("close-button");
+  const mobileNavViewButtons: HTMLCollectionOf<Element> | null =
+    document.getElementsByClassName("mobile-nav-view-button");
 
   if (menuButton && mobileNavView) {
     menuButton.addEventListener("click", function () {
       mobileNavView.style.animationName = "slide-lr";
       mobileNavView.style.animationPlayState = "running";
+      document.body.style.overflow = "hidden";
     });
   }
 
-  if (closeButton && mobileNavView) {
+  if (closeButton && mobileNavView && mobileNavViewButtons) {
     closeButton.addEventListener("click", function () {
       mobileNavView.style.animationName = "slide-rl";
-    })
+      document.body.style.overflow = "auto";
+    });
+
+    for (const button of mobileNavViewButtons) {
+      button.addEventListener("click", function () {
+        mobileNavView.style.animationName = "slide-rl";
+        document.body.style.overflow = "auto";
+      });
+    }
   }
 </script>
