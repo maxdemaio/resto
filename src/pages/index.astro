@@ -94,6 +94,10 @@ import Layout from "../layouts/Layout.astro";
     transform: scaleY(1);
   }
 
+  .strike-white::before {
+    background-color: white !important;
+  }
+
   #menus .item {
     transition: all 0.3s;
   }
@@ -154,10 +158,20 @@ import Layout from "../layouts/Layout.astro";
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          elementToChange.style.color = "#AE4E1E"; 
+          elementToChange.style.color = "#AE4E1E";
+          const anks = elementToChange.querySelectorAll('a');
+          // Loop through all anchor tags and set the ::before pseudo-element style
+          anks.forEach(ank => {
+            ank.classList.remove("strike-white");
+          });
         } else {
           // Change the color of the element to change
           elementToChange.style.color = "white";
+          const anks = elementToChange.querySelectorAll('a');
+          // Loop through all anchor tags and set the ::before pseudo-element style
+          anks.forEach(ank => {
+            ank.classList.add("strike-white");
+          });
         }
       });
     }, options);
