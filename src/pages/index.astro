@@ -142,7 +142,7 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   const elementToChange = document.getElementById("desktop-nav");
-  const targetElement = document.getElementById("about-resto");
+  const targetElement = document.getElementById("hero");
 
   if (elementToChange && targetElement) {
     const options = {
@@ -154,10 +154,10 @@ import Layout from "../layouts/Layout.astro";
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          elementToChange.style.color = "white"; // Change the color of the element to change
-          elementToChange.classList.add("before:bg-white")
+          elementToChange.style.color = "#AE4E1E"; 
         } else {
-          elementToChange.style.color = "#AE4E1E"; // Reset to the original color
+          // Change the color of the element to change
+          elementToChange.style.color = "white";
         }
       });
     }, options);
