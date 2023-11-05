@@ -20,7 +20,7 @@ const Menus: React.FC = () => {
       id="menus-dropdown"
       className="bg-[#895621] text-white px-3 md:px-[10rem] py-14 md:hidden block"
     >
-      <h2 className="font-mantra text-5xl md:text-6xl mb-6">Menus</h2>
+      <h2 className="font-mantra text-5xl md:text-6xl mb-6 pb-8">Menus</h2>
       <div className="active mb-12">
         <button
           onClick={toggleDropdown}

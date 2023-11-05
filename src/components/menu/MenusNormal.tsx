@@ -24,7 +24,7 @@ const Menus: React.FC = () => {
       id="menus"
       className="bg-[#895621] text-white px-3 md:px-[10rem] py-14 md:block hidden"
     >
-      <h2 className="font-mantra text-5xl md:text-6xl mb-6">Menus</h2>
+      <h2 className="font-mantra text-5xl md:text-6xl mb-6 pb-8">Menus</h2>
       <div className="flex items-stretch justify-between w-full border-b mb-12">
         <button
           onClick={() => handleCategoryClick("FOOD")}

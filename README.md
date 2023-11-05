@@ -4,8 +4,6 @@
 
 todo:
 
-- add extra menu items and stuff to the mobile menu
-- internationalization
 - images / paralax
 - spacing finalize
 - mobile sliding menu make nicer
