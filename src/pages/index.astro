@@ -2,6 +2,7 @@
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Footsies from "../components/Footsies.astro";
+import Hall from "../components/Hall.astro";
 import Hero from "../components/Hero.astro";
 import MobileNav from "../components/MobileNav.astro";
 import Menus from "../components/menu/Menus";
@@ -150,6 +151,7 @@ import Layout from "../layouts/Layout.astro";
     </nav>
     <Hero />
     <About />
+    <Hall />
     <Menus client:load />
     <Contact />
     <Footsies />
@@ -167,6 +169,7 @@ import Layout from "../layouts/Layout.astro";
       threshold: 0.45, // Change this value as needed
     };
 
+    // Change the desktop left nav color based on intersection
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
