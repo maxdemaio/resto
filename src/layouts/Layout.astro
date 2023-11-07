@@ -9,6 +9,7 @@ const { title } = Astro.props;
 @font-face {
     font-family: "Mantra";
     src: url("/mantra-regular-webfont.woff2") format("woff2");
+    font-display: swap;
   }
 </style>
 <!doctype html>
@@ -20,6 +21,9 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta property="og:title" content="Resto" />
+    <meta property="og:description" content="</3" />
+    <meta property="og:image" content="/hall-2.jpeg" />
   </head>
   <body class="bg-[#AE4E1E]">
     <slot />
