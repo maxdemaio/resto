@@ -5,7 +5,12 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-
+<style is:global>
+@font-face {
+    font-family: "Mantra";
+    src: url("/mantra-regular-webfont.woff2") format("woff2");
+  }
+</style>
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
