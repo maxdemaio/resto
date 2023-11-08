@@ -9,3 +9,100 @@
     src: url('/fonts/open-sans.woff2') format('woff2');
   }
 }
+
+@keyframes img-fade-in-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.img-fade-in {
+  animation: img-fade-in-ani 3s ease forwards;
+}
+
+@keyframes fade-in-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in-ani 3s ease forwards;
+}
+
+.fade-in-menu {
+  animation: fade-in-ani 1.5s ease forwards;
+}
+
+.font-mantra {
+  font-family: "Mantra", sans-serif;
+  font-style: oblique;
+}
+
+.writing-lr {
+  writing-mode: vertical-lr;
+}
+
+.strike {
+  position: relative;
+}
+
+.strike::before {
+  transition: all 600ms ease-out;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  content: " ";
+  position: absolute;
+  background: white;
+}
+
+.strike:hover::before {
+  transform: scaleX(1);
+}
+
+.strike-vert {
+  position: relative;
+}
+
+.strike-vert::before {
+  transition: all 500ms linear;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  width: 1px;
+  left: 50%;
+  top: 0;
+  content: " ";
+  position: absolute;
+}
+
+.strike-vert:hover::before {
+  transform: scaleY(1);
+}
+
+.strike-white::before {
+  background-color: white !important;
+}
+
+#menus .item {
+  transition: all 0.3s;
+}
+#menus .active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#menus-dropdown .active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#menus .hoverable:hover {
+  background-color: #ae4e1e;
+}
