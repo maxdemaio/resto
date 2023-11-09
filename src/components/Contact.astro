@@ -1,3 +1,9 @@
+---
+import { Image } from "astro:assets";
+import avoToast from "../../public/content-pixie-y6zQ3pP9dss-unsplash.jpg";
+import chickenSam from "../../public/yalamber-limbu-UyJee3dGNn0-unsplash.jpg";
+---
+
 <section id="contact" class="relative z-20 bg-[#61614F] text-white px-10 py-20">
   <div class="flex flex-col gap-4 md:hidden">
     <div class="flex flex-col items-center">
@@ -9,26 +15,26 @@
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
     <div class="flex justify-around flex-wrap gap-4">
-      <img
+      <Image
         class="col-span-2 z-0 img-fade-in rounded-sm"
-        width="200"
-        src="./content-pixie-y6zQ3pP9dss-unsplash.jpg"
+        width={200}
+        src={avoToast}
         alt="avo-toast picture"
       />
-      <img
+      <Image
         class="col-span-2 z-0 img-fade-in rounded-sm"
-        width="200"
-        src="yalamber-limbu-UyJee3dGNn0-unsplash.jpg"
+        width={200}
+        src={chickenSam}
         alt="chicken sandwich picture"
       />
     </div>
   </div>
 
   <div class="hidden md:flex md:items-start justify-around">
-    <img
+    <Image
       class="z-0 img-fade-in rounded-sm"
-      width="200"
-      src="./content-pixie-y6zQ3pP9dss-unsplash.jpg"
+      width={200}
+      src={avoToast}
       alt="avo-toast picture"
     />
     <div class="flex flex-col items-center">
@@ -39,10 +45,10 @@
       <p class="mb-1 py-2">No reservations</p>
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
-    <img
+    <Image
       class="z-0 img-fade-in rounded-sm"
-      width="200"
-      src="yalamber-limbu-UyJee3dGNn0-unsplash.jpg"
+      width={200}
+      src={chickenSam}
       alt="chicken sandwich picture"
     />
   </div>

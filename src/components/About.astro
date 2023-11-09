@@ -1,3 +1,9 @@
+---
+import { Image } from "astro:assets";
+import hall1 from "../../public/hall-1.jpeg";
+import pasta0 from "../../public/pasta-0.jpeg";
+---
+
 <style>
   .inherit {
     position: inherit;
@@ -7,16 +13,16 @@
   id="about-resto"
   class="flex justify-center relative bg-[#AE4E1E] text-white px-3 md:px-[10rem] py-20"
 >
-  <img
-    width="300"
+  <Image
+    width={300}
     class="hidden md:block left-0 top-[30%] img-fade-in absolute rounded-sm"
-    src="./hall-1.jpeg"
+    src={hall1}
     alt="hall picture 1"
   />
-  <img
-    width="300"
+  <Image
+    width={300}
     class="hidden md:block right-0 md:right-24 top-[30%] img-fade-in absolute rounded-sm"
-    src="./pasta-0.jpeg"
+    src={pasta0}
     alt="pasta picture"
   />
   <div class="inherit max-w-md lg:max-w-5xl">
