@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets";
+import winePic from "../../public/amy-vosters--Yxl9vDlnLM-unsplash.jpg";
+import pancake1 from "../../public/pancake-1.jpeg";
+import avo0 from "../../public/avo-0.jpeg";
+import hall0 from "../../public/hall-0.jpeg";
+---
+
 <style>
   /* Animation styles */
   @keyframes slide-from-left-ani {
@@ -71,30 +79,60 @@
   id="hero"
   class="relative overflow-hidden bg-[#DED4C8] text-[#AE4E1E] px-4 md:px-[10rem] pt-12 pb-24"
 >
-  <img
-    class="img-fade-in absolute top-0 right-0 md:right-32 rounded-sm"
-    width="400"
-    src="./amy-vosters--Yxl9vDlnLM-unsplash.jpg"
+  <Image
+    width={400}
+    height={484.3}
+    class="hidden md:block img-fade-in absolute top-0 right-0 md:right-32 rounded-sm"
+    src={winePic}
     alt="wine"
   />
-  <img
-    class="z-0 img-fade-in absolute top-[72%] right-0 md:right-32 rounded-sm"
-    width="250"
-    src="./pancake-1.jpeg"
+
+  <Image
+    width={250}
+    height={190.75}
+    class="hidden md:block img-fade-in absolute top-[72%] right-0 md:right-32 rounded-sm"
+    src={pancake1}
     alt="pancakes 1"
   />
-  <img
+
+  <Image
+    width={400}
+    height={305.6}
     class="hidden md:block z-0 img-fade-in absolute top-[60%] right-96 rounded-sm"
-    width="400"
-    src="./avo-0.jpeg"
+    src={avo0}
     alt="avocado toast"
   />
 
-  <img
-    class="z-0 img-fade-in absolute top-[72%] left-[0%] rounded-sm"
-    width="190"
-    src="./hall-0.jpeg"
-    alt="image 0 of inside of restauarant"
+  <Image
+    width={190}
+    height={256}
+    class="hidden md:block z-0 img-fade-in absolute top-[72%] left-[0%] rounded-sm"
+    src={hall0}
+    alt="image 0 of inside of restaurant"
+  />
+
+  <Image
+    width={300}
+    height={363.225}
+    class="block md:hidden img-fade-in absolute top-0 right-0 md:right-32 rounded-sm"
+    src={winePic}
+    alt="mobile wine"
+  />
+
+  <Image
+    width={180}
+    height={182.16}
+    class="block md:hidden img-fade-in absolute top-[72%] right-0 md:right-32 rounded-sm"
+    src={pancake1}
+    alt="mobile pancakes 1"
+  />
+
+  <Image
+    width={180}
+    height={255.789}
+    class="block md:hidden img-fade-in absolute top-[72%] left-[0%] rounded-sm"
+    src={hall0}
+    alt="mobile image 0 of inside of restaurant"
   />
 
   <div class="z-10 flex flex-col text-center md:text-left gap-6">
