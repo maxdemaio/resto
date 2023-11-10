@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <nav
       id="desktop-nav"
-      class="z-10 transition duration-1000 fade-in text-[#AE4E1E] hidden fixed md:flex flex-col items-center gap-20 p-6"
+      class="z-10 transition duration-1000 fade-in text-[#974319] hidden fixed md:flex flex-col items-center gap-20 p-6"
     >
       <a
         href="#"
@@ -33,11 +33,11 @@ import Layout from "../layouts/Layout.astro";
         <span> RESTO</span>
       </a>
       <div class="font-medium flex flex-1 flex-row gap-4 writing-lr text-sm">
-        <a href="#about-resto" class="px-2 strike-vert before:bg-[#AE4E1E]"
+        <a href="#about-resto" class="px-2 strike-vert before:bg-[#974319]"
           >ABOUT</a
         >
-        <a href="#menus" class="px-2 strike-vert before:bg-[#AE4E1E]">MENUS</a>
-        <a href="#contact" class="px-2 strike-vert before:bg-[#AE4E1E]"
+        <a href="#menus" class="px-2 strike-vert before:bg-[#974319]">MENUS</a>
+        <a href="#contact" class="px-2 strike-vert before:bg-[#974319]"
           >CONTACT</a
         >
       </div>
@@ -73,7 +73,7 @@ import Layout from "../layouts/Layout.astro";
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          elementToChange.style.color = "#AE4E1E";
+          elementToChange.style.color = "#974319";
           const anks = elementToChange.querySelectorAll("a");
           // Loop through all anchor tags and set the ::before pseudo-element style
           anks.forEach((ank) => {
