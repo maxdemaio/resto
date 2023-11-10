@@ -7,16 +7,15 @@ const { title } = Astro.props;
 import "../styles/main.css";
 ---
 
-<style is:global>
-  @font-face {
-    font-family: "Mantra";
-    src: url("/fonts/mantra-regular-webfont.woff2") format("woff2");
-    font-display: swap;
-  }
-</style>
-
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth 2">
   <head>
+    <style is:global>
+      @font-face {
+        font-family: "Mantra";
+        src: url("/fonts/mantra-regular-webfont.woff2") format("woff2");
+        font-display: swap;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
