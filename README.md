@@ -23,3 +23,9 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`                                     | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help`                               | Get help using the Astro CLI                     |
 | `pnpm prettier --write . --plugin=prettier-plugin-astro` | prettier                                         |
+
+## Image attributions
+
+- Photo by <a href="https://unsplash.com/@jaspergribble?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jasper Gribble</a> on <a href="https://unsplash.com/photos/a-white-plate-topped-with-bread-topped-with-veggies-8RxCzAKmSOA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+- Photo by <a href="https://unsplash.com/@amyvosters?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Amy Vosters</a> on <a href="https://unsplash.com/photos/a-glass-of-wine-sitting-on-top-of-a-marble-table--Yxl9vDlnLM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  

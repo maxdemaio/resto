@@ -1,9 +1,3 @@
----
-import { Image } from "astro:assets";
-import avoToast from "../../public/content-pixie-y6zQ3pP9dss-unsplash.jpg";
-import chickenSam from "../../public/yalamber-limbu-UyJee3dGNn0-unsplash.jpg";
----
-
 <section id="contact" class="relative z-20 bg-[#61614F] text-white px-10 py-20">
   <div class="flex flex-col gap-4 md:hidden">
     <div class="flex flex-col items-center">
@@ -15,32 +9,29 @@ import chickenSam from "../../public/yalamber-limbu-UyJee3dGNn0-unsplash.jpg";
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
     <div class="flex justify-around flex-wrap gap-4">
-      <Image
+      <img
         class="col-span-2 z-0 img-fade-in rounded-sm"
-        width={200}
-        height={300}
-        src={avoToast}
+        width="200"
+        height="300"
+        src="/content-pixie-y6zQ3pP9dss-unsplash.jpg"
         alt="avo-toast picture"
-        quality="high"
-        format="jpg"
       />
-      <Image
+      <img
         class="col-span-2 z-0 img-fade-in rounded-sm"
-        width={200}
-        height={300}
-        src={chickenSam}
+        width="200"
+        height="300"
+        src="/yalamber-limbu-UyJee3dGNn0-unsplash.jpg"
         alt="chicken sandwich picture"
-        quality="high"
-        format="jpg"
       />
     </div>
   </div>
 
   <div class="hidden md:flex md:items-start justify-around">
-    <Image
+    <img
       class="z-0 img-fade-in rounded-sm"
-      width={200}
-      src={avoToast}
+      width="200"
+      height="300"
+      src="/content-pixie-y6zQ3pP9dss-unsplash.jpg"
       alt="avo-toast picture"
     />
     <div class="flex flex-col items-center">
@@ -51,10 +42,11 @@ import chickenSam from "../../public/yalamber-limbu-UyJee3dGNn0-unsplash.jpg";
       <p class="mb-1 py-2">No reservations</p>
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
-    <Image
+    <img
       class="z-0 img-fade-in rounded-sm"
-      width={200}
-      src={chickenSam}
+      width="200"
+      height="300"
+      src="/yalamber-limbu-UyJee3dGNn0-unsplash.jpg"
       alt="chicken sandwich picture"
     />
   </div>
