@@ -1,11 +1,18 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="contact" class="relative z-20 bg-[#61614F] text-white px-10 py-20">
   <div class="flex flex-col gap-4 md:hidden">
     <div class="flex flex-col items-center">
-      <h2 class="font-mantra text-5xl md:text-6xl mb-6 pb-8">Contact Us</h2>
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6 pb-8">Contact</h2>
       <a href="#" class="mb-1 py-2 strike">info@dandymtl.com</a>
       <p class="mb-1 py-2">123-456-7890</p>
       <p class="my-2 w-8 border-[1.08px] border-b border-b-white"></p>
-      <p class="mb-1 py-2">No reservations</p>
+      <p class="mb-1 py-2">{t("contact.reservations")}</p>
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
     <div class="flex justify-around flex-wrap gap-4">
@@ -35,11 +42,11 @@
       alt="avo-toast picture"
     />
     <div class="flex flex-col items-center">
-      <h2 class="font-mantra text-5xl md:text-6xl mb-6 pb-8">Contact Us</h2>
+      <h2 class="font-mantra text-5xl md:text-6xl mb-6 pb-8">Contact</h2>
       <a href="#" class="mb-1 py-2 strike">info@dandymtl.com</a>
       <p class="mb-1 py-2">123-456-7890</p>
       <p class="my-2 w-8 border-[1.08px] border-b border-b-white"></p>
-      <p class="mb-1 py-2">No reservations</p>
+      <p class="mb-1 py-2">{t("contact.reservations")}</p>
       <p class="py-2">123 Rue Resto, Montréal, QC</p>
     </div>
     <img
