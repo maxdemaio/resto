@@ -21,7 +21,7 @@ export const foodMenuFr: MenuItem[] = [
     description: "beurre noisette à l’érable, crème de citron",
   },
   {
-    itemName: "ENDLESS SUMMER BREAKFAST",
+    itemName: "DÉJEUNER D'ÉTÉ ÉTERNEL",
     price: 22.99,
     description:
     "avocat sur pain au levain, oeuf miroir, tzatziki maison, salade de tomate ancestrale, concombre, poivron grillé, raisin de corinthe et dukkah"

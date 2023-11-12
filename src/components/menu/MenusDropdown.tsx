@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import MenuItems from "./MenuItems";
-import { drinkMenu, foodMenu, moreMenu } from "./allMenus";
+import {
+  drinkMenu,
+  foodMenu,
+  moreMenu,
+  pastryMenu,
+  sidesMenu,
+  drinkMenuFr,
+  foodMenuFr,
+  moreMenuFr,
+  pastryMenuFr,
+  sidesMenuFr,
+} from "./allMenus";
 
 interface IMenusDropdownProps {
   lang: string;
@@ -107,9 +118,21 @@ const MenusDropdown: React.FC<IMenusDropdownProps> = ({ lang }) => {
             {lang === "en" ? "ALL DAY BRUNCH" : "BRUNCH"}
           </div>
         )}
-        {selectedCategory === "FOOD" && <MenuItems menu={foodMenu} />}
-        {selectedCategory === "DAY DRINKING" && <MenuItems menu={drinkMenu} />}
-        {selectedCategory === "COFFEE & MORE" && <MenuItems menu={moreMenu} />}
+        {selectedCategory === "FOOD" && <MenuItems menu={lang === "en" ? foodMenu : foodMenuFr}  />}
+        {selectedCategory === "DAY DRINKING" && <MenuItems menu={lang === "en" ? drinkMenu : drinkMenuFr}/>}
+        {selectedCategory === "COFFEE & MORE" && <MenuItems menu={lang === "en" ? moreMenu : moreMenuFr} />}
+        {selectedCategory === "FOOD" && (
+          <>
+            <div className="fade-in-menu border-b text-lg pt-6 mb-8">
+              {lang === "en" ? "SIDES" : "À CÔTÉ"}
+            </div>
+            <MenuItems menu={lang === "en" ? sidesMenu : sidesMenuFr} />
+            <div className="fade-in-menu border-b text-lg pt-6 mb-8">
+              {lang === "en" ? "PASTRIES" : "PÂTISSERIES"}
+            </div>
+            <MenuItems menu={lang === "en" ? pastryMenu : pastryMenuFr} />
+          </>
+        )}
       </div>
     </section>
   );
