@@ -15,7 +15,7 @@ const MenuItems: React.FC<MenuProps> = ({ menu }) => {
             className="text-lg mb-2 flex justify-between"
           >
             <div>{item.itemName.toUpperCase()}</div>
-            <div aria-label="price">${item.price.toFixed(2)}</div>
+            <div aria-label="price">{item.price.toFixed(2)}</div>
           </div>
           <p className="mb-6">{item.description}</p>
         </div>
