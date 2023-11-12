@@ -1,7 +1,21 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+// defaultLocale is "en"
+const frUrl = getRelativeLocaleUrl("fr", "");
+const enUrl = getRelativeLocaleUrl("en", "");
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <nav
   class="z-10 font-medium text-sm bg-[#61614F] items-center justify-end text-white h-[100%] right-0 fixed hidden md:flex flex-1 flex-row gap-4 writing-lr p-6"
 >
   <a href="#" class="fade-in px-2 strike-vert before:bg-white">INSTAGRAM</a>
   <a href="#" class="fade-in px-2 strike-vert before:bg-white">FACEBOOK</a>
-  <a href="/fr" class="underline fade-in px-2 strike-vert before:bg-white">FRANÇAIS</a>
+  <a href={lang === "en" ? frUrl : enUrl} class="underline fade-in px-2 strike-vert before:bg-white">
+    {t("rightnav.lang")}
+  </a>
 </nav>
