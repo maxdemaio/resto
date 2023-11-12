@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section class="relative z-20 bg-[#974319] px-10 py-20 text-white">
   <footer class="hidden md:block">
     <div class="flex items-center gap-4 mb-6 pb-8">
@@ -9,7 +16,7 @@
         <h3 class="font-mantra text-xl md:text-3xl mb-4">Info</h3>
         <a class="inline-flex strike mb-1 py-2" href="#menus">Menu</a>
         <br />
-        <a class="py-2 inline-flex strike" href="#about-resto">About</a>
+        <a class="py-2 inline-flex strike" href="#about-resto">{t("footer.about")}</a>
       </div>
       <div>
         <h3 class="font-mantra text-xl md:text-3xl mb-4">Contact</h3>
@@ -22,9 +29,9 @@
         <a href="#" class="inline-flex strike py-2">Facebook</a>
       </div>
       <div>
-        <h3 class="font-mantra text-xl md:text-3xl mb-4">Hours</h3>
-        <p class="mb-1 py-2">Every day (except Tuesday)</p>
-        <p class="py-2">10am to 4pm</p>
+        <h3 class="font-mantra text-xl md:text-3xl mb-4">{t("footer.hoursheader")}</h3>
+        <p class="mb-1 py-2">{t("footer.days")}</p>
+        <p class="py-2">{t("footer.hours")}</p>
       </div>
     </div>
   </footer>
@@ -32,7 +39,7 @@
   <footer class="visible md:hidden">
     <div class="flex flex-col items-center gap-2">
       <h2 class="font-mantra text-5xl md:text-6xl p-2 mb-6 pb-8">Resto</h2>
-      <a class="inline-flex strike" href="#about-resto">About</a>
+      <a class="inline-flex strike" href="#about-resto">{t("footer.about")}</a>
       <a class="inline-flex strike py-2" href="#menus-dropdown">Menu</a>
       <a class="inline-flex strike py-2" href="#contact">Contact</a>
       <div class="my-2 w-8 border-[1.08px] border-b border-b-white"></div>
@@ -41,8 +48,8 @@
       <a href="#" class="inline-flex strike py-2">Instagram</a>
       <a href="#" class="inline-flex strike py-2">Facebook</a>
       <div class="my-2 w-8 border-[1.08px] border-b border-b-white"></div>
-      <p class="text-center py-2">Open every day (except Tuesday)</p>
-      <p>10am to 4pm</p>
+      <p class="text-center py-2">{t("footer.days")}</p>
+      <p>{t("footer.hours")}</p>
     </div>
   </footer>
 </section>

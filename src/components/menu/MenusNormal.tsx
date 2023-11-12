@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import MenuItems from "./MenuItems";
 import {
   drinkMenu,
@@ -8,7 +9,11 @@ import {
   sidesMenu,
 } from "./allMenus";
 
-const Menus: React.FC = () => {
+interface IMenusNormalProps {
+  lang: string;
+}
+
+const MenusNormal: React.FC<IMenusNormalProps> = ({ lang }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("FOOD");
 
   const handleCategoryClick = (category: string) => {
@@ -29,32 +34,32 @@ const Menus: React.FC = () => {
         <button
           onClick={() => handleCategoryClick("FOOD")}
           className={`item grow p-4 font-mantra text-xl md:text-3xl basis-0 ${isButtonActive(
-            "FOOD",
+            "FOOD"
           )}`}
         >
-          FOOD
+          {lang === "en" ? "FOOD" : "À MANGER"}
         </button>
         <button
           onClick={() => handleCategoryClick("DAY DRINKING")}
           className={`item grow p-4 font-mantra text-xl md:text-3xl basis-0 ${isButtonActive(
-            "DAY DRINKING",
+            "DAY DRINKING"
           )}`}
         >
-          DAY DRINKING
+          {lang === "en" ? "DAY DRINKING" : "COCKTAILS MATINAUX"}
         </button>
         <button
           onClick={() => handleCategoryClick("COFFEE & MORE")}
           className={`item grow p-4 font-mantra text-xl md:text-3xl basis-0 ${isButtonActive(
-            "COFFEE & MORE",
+            "COFFEE & MORE"
           )}`}
         >
-          COFFEE & MORE
+          {lang === "en" ? "COFFEE & MORE" : "CAFÉ & CI"}
         </button>
       </div>
       <div>
         {selectedCategory === "FOOD" && (
           <div className="fade-in-menu border-b text-lg mb-8">
-            ALL DAY BRUNCH
+            {lang === "en" ? "ALL DAY BRUNCH" : "BRUNCH"}
           </div>
         )}
         {selectedCategory === "FOOD" && <MenuItems menu={foodMenu} />}
@@ -62,18 +67,21 @@ const Menus: React.FC = () => {
         {selectedCategory === "COFFEE & MORE" && <MenuItems menu={moreMenu} />}
         {selectedCategory === "FOOD" && (
           <>
-            <div className="fade-in-menu border-b text-lg pt-6 mb-8">SIDES</div>
+            <div className="fade-in-menu border-b text-lg pt-6 mb-8">
+              {lang === "en" ? "SIDES" : "À CÔTÉ"}
+            </div>
             <MenuItems menu={sidesMenu} />
             <div className="fade-in-menu border-b text-lg pt-6 mb-8">
-              PASTRIES
+              {lang === "en" ? "PASTRIES" : "PÂTISSERIES"}
             </div>
             <MenuItems menu={pastryMenu} />
           </>
         )}
         {selectedCategory === "DAY DRINKING" && (
           <div className="pt-6 mb-8">
-            *Our natural wine offering is ever evolving and available upon
-            request at the restaurant.
+            {lang === "en"
+              ? "*Our natural wine offering is ever evolving and available upon request at the restaurant."
+              : "*Notre sélection de vins natures évolue constamment, consultez-la sur demande en restaurant."}
           </div>
         )}
       </div>
@@ -81,4 +89,4 @@ const Menus: React.FC = () => {
   );
 };
 
-export default Menus;
+export default MenusNormal;

@@ -1,0 +1,26 @@
+---
+import About from "../../components/About.astro";
+import Contact from "../../components/Contact.astro";
+import DesktopLeftNav from "../../components/DesktopLeftNav.astro";
+import DesktopRightNav from "../../components/DesktopRightNav.astro";
+import Footsies from "../../components/Footsies.astro";
+import Hall from "../../components/Hall.astro";
+import Hero from "../../components/Hero.astro";
+import MobileNav from "../../components/MobileNav.astro";
+import Menus from "../../components/menu/Menus";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Resto">
+  <main>
+    <DesktopLeftNav />
+    <MobileNav />
+    <DesktopRightNav />
+    <Hero />
+    <About />
+    <Hall />
+    <Menus client:load lang={"fr"} />
+    <Contact />
+    <Footsies />
+  </main>
+</Layout>

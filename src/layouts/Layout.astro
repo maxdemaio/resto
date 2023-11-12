@@ -35,5 +35,43 @@ import "../styles/main.css";
   </head>
   <body class="bg-[#974319]">
     <slot />
+
+    <script>
+      // Intersection API for left desktop nav
+      const elementToChange = document.getElementById("desktop-nav");
+      const targetElement = document.getElementById("hero");
+
+      if (elementToChange && targetElement) {
+        const options = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.45, // Change this value as needed
+        };
+
+        // Change the desktop left nav color based on intersection
+        const intersectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              elementToChange.style.color = "#974319";
+              const anks = elementToChange.querySelectorAll("a");
+              // Loop through all anchor tags and set the ::before pseudo-element style
+              anks.forEach((ank) => {
+                ank.classList.remove("strike-white");
+              });
+            } else {
+              // Change the color of the element to change
+              elementToChange.style.color = "white";
+              const anks = elementToChange.querySelectorAll("a");
+              // Loop through all anchor tags and set the ::before pseudo-element style
+              anks.forEach((ank) => {
+                ank.classList.add("strike-white");
+              });
+            }
+          });
+        }, options);
+
+        intersectionObserver.observe(targetElement);
+      }
+    </script>
   </body>
 </html>
