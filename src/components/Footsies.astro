@@ -39,7 +39,7 @@ const t = useTranslations(lang);
   <footer class="visible md:hidden">
     <div class="flex flex-col items-center gap-2">
       <h2 class="font-mantra text-5xl md:text-6xl p-2 mb-6 pb-8">Resto</h2>
-      <a class="inline-flex strike" href="#about-resto">About</a>
+      <a class="inline-flex strike" href="#about-resto">{t("footer.about")}</a>
       <a class="inline-flex strike py-2" href="#menus-dropdown">Menu</a>
       <a class="inline-flex strike py-2" href="#contact">Contact</a>
       <div class="my-2 w-8 border-[1.08px] border-b border-b-white"></div>
@@ -48,8 +48,8 @@ const t = useTranslations(lang);
       <a href="#" class="inline-flex strike py-2">Instagram</a>
       <a href="#" class="inline-flex strike py-2">Facebook</a>
       <div class="my-2 w-8 border-[1.08px] border-b border-b-white"></div>
-      <p class="text-center py-2">Open every day (except Tuesday)</p>
-      <p>10am to 4pm</p>
+      <p class="text-center py-2">{t("footer.days")}</p>
+      <p>{t("footer.hours")}</p>
     </div>
   </footer>
 </section>

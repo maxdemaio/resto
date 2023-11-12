@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import MenuItems from "./MenuItems";
 import { drinkMenu, foodMenu, moreMenu } from "./allMenus";
 
-const Menus: React.FC = () => {
+interface IMenusDropdownProps {
+  lang: string;
+}
+
+const MenusDropdown: React.FC<IMenusDropdownProps> = ({ lang }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("FOOD");
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -27,7 +31,23 @@ const Menus: React.FC = () => {
           className="w-full flex justify-between p-4 font-mantra text-xl md:text-3xl"
         >
           <div className="spacer"></div>
-          <div>{selectedCategory.toUpperCase()} </div>
+          <div>
+            {lang === "fr"
+              ? (() => {
+                  switch (selectedCategory) {
+                    case "FOOD":
+                      return "À MANGER";
+                    case "DAY DRINKING":
+                      return "COCKTAILS MATINAUX";
+                    case "COFFEE & MORE":
+                      return "CAFÉ & CI";
+                    default:
+                      return null; // or some default value if none of the cases match
+                  }
+                })()
+              : selectedCategory}
+          </div>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -60,7 +80,7 @@ const Menus: React.FC = () => {
               className="item grow p-4 font-mantra text-xl md:text-3xl basis-0"
               onClick={() => handleCategoryClickDropdown("FOOD")}
             >
-              FOOD
+              {lang === "en" ? "FOOD" : "À MANGER"}
             </button>
           )}
           {selectedCategory !== "DAY DRINKING" && (
@@ -68,7 +88,7 @@ const Menus: React.FC = () => {
               className="item grow p-4 font-mantra text-xl md:text-3xl basis-0"
               onClick={() => handleCategoryClickDropdown("DAY DRINKING")}
             >
-              DAY DRINKING
+              {lang === "en" ? "DAY DRINKING" : "COCKTAILS MATINAUX"}
             </button>
           )}
           {selectedCategory !== "COFFEE & MORE" && (
@@ -76,7 +96,7 @@ const Menus: React.FC = () => {
               className="item grow p-4 font-mantra text-xl md:text-3xl basis-0"
               onClick={() => handleCategoryClickDropdown("COFFEE & MORE")}
             >
-              COFFEE & MORE
+              {lang === "en" ? "COFFEE & MORE" : "CAFÉ & CI"}
             </button>
           )}
         </div>
@@ -84,7 +104,7 @@ const Menus: React.FC = () => {
       <div>
         {selectedCategory === "FOOD" && (
           <div className="fade-in-menu border-b text-lg mb-8">
-            ALL DAY BRUNCH
+            {lang === "en" ? "ALL DAY BRUNCH" : "BRUNCH"}
           </div>
         )}
         {selectedCategory === "FOOD" && <MenuItems menu={foodMenu} />}
@@ -95,4 +115,4 @@ const Menus: React.FC = () => {
   );
 };
 
-export default Menus;
+export default MenusDropdown;
