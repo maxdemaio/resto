@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <style>
   /* Animation styles */
   @keyframes slide-from-left-ani {
@@ -130,22 +137,22 @@
   <div class="z-10 flex flex-col text-center md:text-left gap-6">
     <div class="flex flex-col hover:text-gray-600 slide-from-left w-full">
       <div class="font-mantra text-7xl md:text-8xl">Brunch</div>
-      <span class="hidden md:block text-xs">from 10am to 4pm</span>
+      <span class="hidden md:block text-xs">{t("hero.brunchdescrip")}</span>
     </div>
     <div class="z-10 flex flex-row gap-2 hover:text-gray-600 w-full">
       <div class="md:w-16"></div>
       <div class="font-mantra text-7xl md:text-8xl slide-from-right">
-        Coffee
+        {t("hero.coffee")}
       </div>
       <span
         class="hidden md:block text-xs slide-from-right-delay whitespace-nowrap"
-        >for here or to go</span
+        >{t("hero.coffeedescrip")}</span
       >
     </div>
     <div class="z-10 relative hover:text-gray-600 w-full">
       <span
         class="hidden md:block absolute writing-lr rotate-180 text-xs whitespace-nowrap bottom-8 left-[2.35rem] slide-from-top"
-        >business or boozy</span
+        >{t("hero.lunchdescrip")}</span
       >
       <div class="font-mantra text-7xl md:text-8xl slide-from-right">Lunch</div>
     </div>
@@ -153,16 +160,16 @@
       class="z-10 flex flex-row items-center gap-2 hover:text-gray-600 slide-from-left mx-auto md:mx-0 w-full"
     >
       <span class="hidden md:block writing-lr rotate-180 text-xs"
-        >many by the glass</span
+        >{t("hero.winedescrip")}</span
       >
-      <div class="font-mantra text-7xl md:text-8xl">Natural wines</div>
+      <div class="font-mantra text-7xl md:text-8xl">{t("hero.wine")}</div>
     </div>
     <div class="z-10 flex flex-row gap-2 hover:text-gray-600 w-full">
       <div class="font-mantra text-7xl md:text-8xl slide-from-right">
         Snacks
       </div>
       <span class="hidden md:block text-xs slide-from-top whitespace-nowrap"
-        >all day long</span
+        >{t("hero.snacksdescrip")}</span
       >
     </div>
   </div>
