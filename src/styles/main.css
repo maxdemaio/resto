@@ -21,6 +21,7 @@
 
 .img-fade-in {
   animation: img-fade-in-ani 3s ease forwards;
+  will-change: transform, opacity; /* Prevents flicker in Safari */
 }
 
 @keyframes fade-in-ani {
