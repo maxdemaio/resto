@@ -23,7 +23,10 @@ import "../styles/main.css";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta property="og:title" content="Resto </3" />
-    <meta property="og:description" content="Located in the heart of Old Montreal, Resto is the perfect place to enjoy a delicious breakfast or lunch, to take away coffee & pastries or delight in a long boozy brunch. The cellar offers an ambitious natural wine selection while complimenting a refined yet comforting menu." />
+    <meta
+      property="og:description"
+      content="Located in the heart of Old Montreal, Resto is the perfect place to enjoy a delicious breakfast or lunch, to take away coffee & pastries or delight in a long boozy brunch. The cellar offers an ambitious natural wine selection while complimenting a refined yet comforting menu."
+    />
     <meta property="og:image" content="/hall-2.jpeg" />
     <link
       rel="preload"
@@ -37,7 +40,7 @@ import "../styles/main.css";
     <slot />
 
     <script>
-      // Intersection API for left desktop nav
+      //// Intersection API for left desktop nav
       const elementToChange = document.getElementById("desktop-nav");
       const targetElement = document.getElementById("hero");
 
@@ -49,7 +52,7 @@ import "../styles/main.css";
         };
 
         // Change the desktop left nav color based on intersection
-        const intersectionObserver = new IntersectionObserver((entries) => {
+        const leftNavObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               elementToChange.style.color = "#974319";
@@ -70,8 +73,64 @@ import "../styles/main.css";
           });
         }, options);
 
-        intersectionObserver.observe(targetElement);
+        leftNavObserver.observe(targetElement);
       }
+
+      //// Parallax images
+      document.addEventListener("DOMContentLoaded", function () {
+        // Target the elements with the class .parallax-image
+        const parallaxImages =
+          document.querySelectorAll<HTMLElement>(".parallax-image");
+
+        // Get the viewport height
+        const viewportHeight = window.innerHeight;
+
+        // Calculate and set the initial scroll offset for each image
+        parallaxImages.forEach((image) => {
+          const elementTop = image.getBoundingClientRect().top;
+          const scrollOffset = Math.max(elementTop - viewportHeight, 0);
+          image.dataset.scrollOffset = scrollOffset.toString();
+        });
+      });
+
+      // Set up the Intersection Observer
+      const parallaxObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            target.classList.add("visible");
+          } else {
+            target.classList.remove("visible");
+          }
+        });
+      });
+
+      // Target the elements with the class .parallax-image
+      const parallaxImages = document.querySelectorAll(".parallax-image");
+      parallaxImages.forEach((image) => {
+        parallaxObserver.observe(image);
+      });
+
+      document.addEventListener("scroll", function () {
+        // Get current scroll value
+        const scrollValue =
+          document.documentElement.scrollTop || document.body.scrollTop;
+
+        // Select all elements with the class .parallax-image-visible
+        const parallaxImagesVisible = document.querySelectorAll<HTMLElement>(
+          ".parallax-image.visible"
+        );
+
+        // Iterate through each element and update its style
+        parallaxImagesVisible.forEach(function (element) {
+          const scrollOffset = parseFloat(element.dataset.scrollOffset || "0");
+          const translateY = Math.min(
+            Math.max((scrollValue - scrollOffset) * 0.15, 0),
+            800
+          );
+          element.style.transform = `translateY(${translateY}px)`;
+        });
+      });
     </script>
   </body>
 </html>
